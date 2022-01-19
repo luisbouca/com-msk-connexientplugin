@@ -138,11 +138,6 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="$GOOGLEMAPS_APIKEY" />
 
-            <receiver tools:node="merge" android:exported="true" android:name="com.polestar.models.RegisterBackgroundScanReceiver"/>
-            <receiver tools:node="merge" android:exported="true" android:name="com.polestar.models.BackgroundScanReceiver" />
-
-
-            <receiver tools:node="merge" android:exported="true" android:name="com.polestar.models.BeaconCheckLostAlarmReceiver" />
         </config-file>
         <!-- END AndroidManifiest.xml Meta data -->
 

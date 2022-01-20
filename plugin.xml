@@ -13,6 +13,7 @@
     <!-- Preferences -->
     <!--<preference name="CONNEXIENT_APIKEY" />-->
     <preference name="GOOGLEMAPS_APIKEY" />
+    <preference name="ISDEBUG" default="False"/>
     <preference name="NSLOCATIONWHENINUSEUSAGEDESCRIPTION" default="Need location access to find things nearby" />
     <preference name="NSLOCATIONALWAYSANDWHENINUSEUSAGEDESCRIPTION" default="Need location access to find things nearby in background" />
     <preference name="NSBLUETOOTHALWAYSUSAGEDESCRIPTION" default="Need bluetooth to comunicate with devices nearby"/>
@@ -86,11 +87,17 @@
     </platform>
 
     <platform name="android">
+
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="MSKConnexientPlugin">
                 <param name="android-package" value="com.msk.connexientplugin.MSKConnexientPlugin" />
             </feature>
         </config-file>
+
+
+	    <hook type="after_platform_add" src="hooks/downgradeGradleToMABS7.js" />
+	    <hook type="after_prepare" src="hooks/downgradeGradleToMABS7.js" />
+
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/MSKConnexientPlugin.java" target-dir="src/com/msk/connexientplugin/MSKConnexientPlugin" />
 

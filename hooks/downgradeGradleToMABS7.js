@@ -26,9 +26,13 @@ module.exports = function (context) {
             jsonContent.AGP_VERSION = "4.0.1";
             jsonContent.KOTLIN_VERSION = "1.3.50";  
             jsonContent.GRADLE_PLUGIN_GOOGLE_SERVICES_VERSION = "4.2.0";
-            jsonContent.BUILD_TOOLS_VERSION = "30.0.2";
-            jsonContent.MIN_BUILD_TOOLS_VERSION = "30.0.2";
+            jsonContent.BUILD_TOOLS_VERSION = "31.0.0";
             jsonContent.SDK_VERSION = 30;
+
+            let out = require('child_process').spawnSync("cp", ["-R","/opt/android-sdk/build-tools/31.0.0/d8","/opt/android-sdk/build-tools/31.0.0/dx"]);
+            console.log(out.stdout.toString());
+            let out2 = require('child_process').spawnSync("cp", ["-R","/opt/android-sdk/build-tools/31.0.0/d8.jar","/opt/android-sdk/build-tools/31.0.0/dx.jar"]);
+            console.log(out2.stdout.toString());
 
             content = JSON.stringify(jsonContent);
 
